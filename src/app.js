@@ -8,6 +8,8 @@ const app = express();
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
+const PORT = process.env.PORT || 8080;
+
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
 app.use(express.static(path.join(__dirname, "../public")));
@@ -46,6 +48,6 @@ app.get("/about", function (req, res) {
   // });
 });
 
-app.listen(8080, () => {
-  console.log("Server is listening on port 3000");
+app.listen(PORT, () => {
+  console.log("Server is listening on port", PORT);
 });

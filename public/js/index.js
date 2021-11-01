@@ -10,7 +10,7 @@ weatherForm.addEventListener("submit", (e) => {
   console.log(value);
   message.textContent = "Loading";
 
-  fetch(`http://localhost:8080/about?search=${value}`)
+  fetch(`/about?search=${value}`)
     .then((response) => response.json())
     .then((responseData) => {
       console.log(responseData);
